@@ -1,0 +1,417 @@
+@import url(https://fonts.googleapis.com/css?family=Dancing+Script);
+
+/*main*/
+
+body{
+    background-image: url('bgimage.jpg');
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: black;
+    font-size: 87.5%;
+    font-family: Arial,'Lucida Sans Unicode';
+    line-height: 1.5;
+    text-align: left;
+}
+
+a{
+    text-decoration: none;
+
+}
+a:link, a:revisited{
+color:#26A65B;
+}
+a:hover, a:active{
+color: #26A65B;
+}
+
+.body{
+    margin: 0 auto;
+    width: 70%;
+    clear: both;
+}
+
+.mainheader img{
+    width: 30;
+    height: auto;
+    margin: 2% 0;
+}
+
+.mainheader nav{
+    background-color: #26A65B;
+    font-size: 17px;
+    height: 40px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+.mainheader nav ul{
+    list-style: none;
+    margin: 0 auto;
+}
+
+.mainheader nav ul li{
+    float: left;
+    display: inline;
+}
+
+.mainheader nav a:link, .mainheader nav a:visited{
+   color: #fff;
+   display: inline-block;
+   padding: 10px 25px;
+   height: 20px; 
+}
+
+.mainheader nav a:hover, .mainheader nav a:active,
+.mainheader nav .active a:link, .mainheader nav .active a:visited{
+    background-color:#049372 ;
+    color: white;
+    text-shadow: none;
+}
+
+.mainheader nav ul li a{
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+.dropdown{
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn{
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 10px;
+    background-color: inherit;
+    margin: 0 auto;
+    font-size: 17px;
+ 
+}
+
+.dropdown-content{
+    display: none;
+    position: absolute;
+    background-color: #26A65B;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a{
+    float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.mainheader a:hover, .dropdown:hover .dropbtn{
+    background-color: #049372;
+    color: white;
+}
+
+.dropdown-content a:hover{
+    background-color: #049372;
+    color: black;
+}
+
+.dropdown:hover .dropdown-content{
+    display: block;
+}
+
+.mainheader .search-container{
+    float: right;
+}
+
+.mainheader input[type=text]{
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 17px;
+    border: none;
+}
+
+.mainheader .search-container button{
+    float: right;
+    padding: 6px 10px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+}
+
+.mainheader .search-container button:hover{
+    background: #ccc;
+}
+
+.mainContent{
+    line-height: 25px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+.content{
+    width: 70%;
+    float: left;
+}
+
+.post-info{
+    font-style: italic;
+    color: #999;
+    font-size: 85%;
+}
+
+.topcontent{
+    background-color: #fff;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    padding: 3% 5%;
+    margin-top: 2%;
+}
+
+.twocontent{
+    background-color: #fff;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    padding: 3% 5%;
+    margin-top: 2%;
+}
+
+.threecontent{
+    background-color: #fff;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    padding: 3% 5%;
+    margin-top: 2%;
+}
+
+.fourthcontent{
+    background-color: #fff;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    padding: 3% 5%;
+    margin-top: 2%;
+}
+
+.fifthcontent{
+    background-color: #fff;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    padding: 3% 5%;
+    margin-top: 2%;
+}
+
+.top-sidebar{
+    width: 21%;
+    float: left;
+    background-color: #fff;
+    font-weight: bold;
+    margin: 2% 0 0% 3%; /*top right bottom left*/
+    padding: 2% 3%;
+}
+
+.middle-sidebar{
+    width: 21%;
+    float: left;
+    background-color: #fff;
+    font-weight: bold;
+    margin: 0% 0% 2% 3%;
+    padding: 2% 3%;
+}
+
+
+.mainFooter{
+    width: 100%;
+    height: 40px;
+    float: left;
+    background-color: #049372;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    margin: 0;
+}
+
+.mainFooter p{
+    width: 92%;
+    margin: 1% auto;
+}
+
+.pagination{
+    display: inline-block;
+}
+
+.pagination a{
+    border: 1px solid #ddd;
+    background-color: #fff;
+    color: #26A65B;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+@media only screen and(min-width: 150px) and (max-width : 600px){
+    .body{
+        width: 90%;
+        font-size: 90%;
+
+    }
+
+    .mainheader img{
+        width: 100%;
+        
+    }
+
+    .mainheader nav{
+        height: 160px;
+    }
+    
+    .mainheader nav ul{
+        padding-left: 0;
+    }
+    
+    .mainheader nav ul li{
+        width: 100%;
+        text-align: center;
+    }
+    
+    .mainheader nav a:link, .mainheader nav a:visited{
+       padding: 10px 25px;
+       height: 20px;
+       display: block; 
+    }
+
+    .mainheader .search-container{
+        float: none;
+    } 
+
+    .mainheader a, .mainheader input[type=text], .mainheader .search-container button{
+        float: none;
+        display: block;
+        text-align: left;
+        width: 100%;
+        margin: 0;
+        padding: 14px;
+    }
+
+    .mainheader input[type=text]{
+        border: 1px solid #ccc;
+    };
+
+    .mainheader a:not(:first-child), .dropdown .dropbtn{
+        display: none;
+    }
+
+    .mainheader a.icon{
+        float: right;
+        display: block;
+    }
+    
+}
+
+/*profil*/
+
+.sidenav{
+    background-color: #049372;
+    color: #333;
+    height: 60%;
+    overflow-x: hidden;
+    padding-top: 20px;
+    position: absolute;
+    top: 250px;
+    width: 250px;
+    border-radius: 5px;
+}
+
+.profile{
+    margin-bottom: 20px;
+    margin-top: -12px;
+    text-align: center;
+}
+
+.profile img{
+    border-radius: 50%;
+    box-shadow: 0px 0px 5px 1px grey;
+}
+
+.name{
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 20px;
+}
+
+.job{
+    font-size: 16px;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+.main{
+    margin-top: 2%;
+    margin-left: 29%;
+    font-size: 28px;
+    padding: 0 10px;
+    width: 58%;
+}
+
+.main h2{
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.main .card{
+    background-color: #fff;
+    border-radius: 18px;
+    box-shadow: 1px 1px 8px 0 grey;
+    height: auto;
+    margin-bottom: 20px;
+    padding: 20px 0 20px 50px;
+}
+
+.main .card table{
+    border: none;
+    font-size: 16px;
+    height: 270px;
+    width: 80%;
+}
+
+.edit{
+    position: absolute;
+    color: #e7e7e8;
+    right: 14%;
+}
+
+.social-media{
+    text-align: center;
+    width: 90%;
+}
+
+.social-media span{
+    margin: 0 10px;
+}
+
+.fa-instagram:hover{
+    color: #ce2b94 !important;
+}
+
+.fa-github:hover{
+    color: #161414 !important;
+}
+
+.fa-whatsapp:hover{
+    color: #25d366 !important;
+}
