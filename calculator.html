@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <link href="style.css" rel="stylesheet">
+  <script src="calculator.js" defer></script>
+</head>
+<body>
+  <header class="mainheader">
+    <nav><ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="profil.html">About</a></li>
+      <li><a href="#">Calculate</a></li>
+      <li><a href="movie.html">Movie</a></li>
+
+      <div class="dropdown">
+        <button class="dropbtn">Category
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="#">Berita</a>
+          <a href="#">Wiki</a>
+        </div>
+      </div>
+      <div class="search-container">
+          <input type="text" placeholder="Search.." name="search">
+          <button type="submit"><i class="fa fa-search"></i></button>
+      </div>
+    </ul></nav>
+  </header>
+
+
+
+  <div class="calculator-grid">
+    <div class="output">
+      <div data-previous-operand class="previous-operand"></div>
+      <div data-current-operand class="current-operand"></div>
+    </div>
+    <button data-all-clear>AC</button>
+    <button data-delete>DEL</button>
+    <button data-operation>/</button>
+    <button data-operation=>%</button>
+    <button data-number>1</button>
+    <button data-number>2</button>
+    <button data-number>3</button>
+    <button data-operation>*</button>
+    <button data-number>4</button>
+    <button data-number>5</button>
+    <button data-number>6</button>
+    <button data-operation>+</button>
+    <button data-number>7</button>
+    <button data-number>8</button>
+    <button data-number>9</button>
+    <button data-operation>-</button>
+    <button data-number>.</button>
+    <button data-number>0</button>
+    <button data-operation>^</button>
+    <button data-equals>=</button>
+  </div>
+  
+</body>
+</html>
