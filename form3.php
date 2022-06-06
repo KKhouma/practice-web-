@@ -4,8 +4,6 @@
 <style>  
 .error {color: #FF0001;}  
 
-
-
 input[type=text], select, textarea {
   width: 100%;
   padding: 12px;
@@ -26,7 +24,7 @@ input[type=submit] {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  floatjavascript:void(0);: right;
+
 }
 
 input[type=submit]:hover {
@@ -39,32 +37,7 @@ input[type=submit]:hover {
   padding: 20px;
 }
 
-.col-25 {
-  float: left;
-  width: 25%;
-  margin-top: 6px;
-}
 
-.col-75 {
-  float: left;
-  width: 75%;
-  margin-top: 6px;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .col-25, .col-75, input[type=submit] {
-    width: 100%;
-    margin-top: 0;
-  }
-}
 </style>  
 
  <link
@@ -78,71 +51,59 @@ input[type=submit]:hover {
 </head>  
 <body>    
   
-<?php  
-// define variables to empty values  
-$nameErr = $emailErr = $nimErr = $genderErr = $commentErr = $agreeErr = "";  
+<?php   
+$namered = $emailred = $nimred = $genderred = $commentred = $agreered = "";  
 $name = $email = $nim = $gender = $comment = $agree = "";  
   
-//Input fields validation  
 if ($_SERVER["REQUEST_METHOD"] == "POST") {  
-
-      
-//String Validation  
+ 
     if (empty($_POST["name"])) {  
-         $nameErr = "Nama wajib diisi";  
+         $namered = "Nama wajib diisi";  
     } else {  
         $name = input_data($_POST["name"]);  
-            // check if name only contains letters and whitespace  
             if (!preg_match("/^[a-zA-Z ]*$/",$name)) {  
-                $nameErr = "hanya boleh menggunakan huruf";  
+                $namered = "hanya boleh menggunakan huruf";  
             }  
     }  
       
-    //Email Validation  
     if (empty($_POST["email"])) {  
-            $emailErr = "Email wajib diisi";  
+            $emailred = "Email wajib diisi";  
     } else {  
-            $email = input_data($_POST["email"]);  
-            // check that the e-mail address is well-formed  
+            $email = input_data($_POST["email"]); 
             if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {  
-                $emailErr = "pastikan lagi format email";  
+                $emailred = "pastikan lagi format email";  
             }  
      }  
     
-    //Number Validation  
     if (empty($_POST["nim"])) {  
-            $nimErr = "nim tidak boleh kosong";  
+            $nimred = "nim tidak boleh kosong";  
     } else {  
             $nim = input_data($_POST["nim"]);  
-            // check if mobile no is well-formed  
             if (!preg_match ("/^[0-9]*$/", $nim) ) {  
-            $nimErr = "hanya angka yang diperbolehkan.";  
+            $nimred = "hanya angka yang diperbolehkan.";  
             }  
-        //check mobile no length should not be less and greator than 10  
         if (strlen ($nim) != 15) {  
-            $nimErr = "NIM harus 15 digit";  
+            $nimred = "NIM harus 15 digit";  
             }  
     }  
 
-    //comment validation
     if (empty($_POST["comment"])) {
     $comment = "";
     } else {
-    $comment = test_input($_POST["comment"]);
+    $comment = input_data($_POST["comment"]);
      }
 
       
    
-    //Empty Field Validation  
+
     if (empty ($_POST["gender"])) {  
-            $genderErr = "pilih jenis kelamin anda";  
+            $genderred = "pilih jenis kelamin anda";  
     } else {  
             $gender = input_data($_POST["gender"]);  
     }  
   
-    //Checkbox Validation  
     if (!isset($_POST['agree'])){  
-            $agreeErr = "pastikan data anda benar dan centang validasi";  
+            $agreered = "pastikan data anda benar dan centang validasi";  
     } else {  
             $agree = input_data($_POST["agree"]);  
     }  
@@ -189,46 +150,42 @@ function input_data($data) {
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" >    
     Nama:  
     <input type="text" name="name">  
-    <span class="error">* <?php echo $nameErr; ?> </span>  
+    <span class="error">* <?php echo $namered; ?> </span>  
     <br><br>  
     E-mail:  
     <input type="text" name="email">  
-    <span class="error">* <?php echo $emailErr; ?> </span>  
+    <span class="error">* <?php echo $emailred; ?> </span>  
     <br><br>  
     NIM:  
     <input type="text" name="nim">  
-    <span class="error">* <?php echo $nimErr; ?> </span>  
+    <span class="error">* <?php echo $nimred; ?> </span>  
     <br><br>  
     Jenis Kelamin:  
     <input type="radio" name="gender" value="male"> Male  
     <input type="radio" name="gender" value="female"> Female   
-    <span class="error">* <?php echo $genderErr; ?> </span>  
+    <span class="error">* <?php echo $genderred; ?> </span>  
     <br><br>
     Deskripsi: 
     <textarea name="comment" rows="5" cols="40"><?php echo $comment;?></textarea>
   <br><br>  
     Pastikan anda mengisi form dengan benar:  
     <input type="checkbox" name="agree">  
-    <span class="error">* <?php echo $agreeErr; ?> </span>  
+    <span class="error">* <?php echo $agreered; ?> </span>  
     <br><br>                            
     <input type="submit" name="submit" value="Submit">  
-    <br><br>                            
+    <br><br>    
+    
+    
 </form>  
-  
 <?php  
     
-    if($nameErr == "" && $emailErr == "" && $nimErr == "" && $genderErr == "" && $agreeErr == "") {  
-        echo "<h3 color = #FF0001> <b>data yang anda inputkan : .</b> </h3>";  
-        echo "<h2>Your Input:</h2>";  
-        echo "Name: " .$name;  
-        echo "<br>";  
-        echo "Email: " .$email;  
-        echo "<br>";  
-        echo "Mobile No: " .$nim;  
-        echo "<br>";  
-        echo "Deskripsi tambahan: ".$comment;
-        echo "<br>"; 
-        echo "Gender: " .$gender;  
+    if($namered == "" && $emailred == "" && $nimred == "" && $genderred == "" && $agreered == "") {  
+        echo "<h3> <b>data yang anda inputkan : .</b> </h3>";  
+        echo "Name: " .$name."<br>";  
+        echo "Email: " .$email."<br>";  
+        echo "Mobile No: " .$nim."<br>";  
+        echo "Deskripsi tambahan: ".$comment."<br>";
+        echo "Gender: " .$gender."<br>";  
         echo "<br>";
         echo "<br>";
         echo "gunakan halaman daftar untuk clear output";
@@ -237,6 +194,8 @@ function input_data($data) {
     }  
     
 ?>  
+  
+
   
 </body>  
 </html>
